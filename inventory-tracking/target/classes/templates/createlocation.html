@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Add New Location</title>
+    </head>
+    <body>
+        <form action="#" th:action="@{/inventory/location}" th:object="${locationCreate}" method="post">
+            <h1>Add Location</h1>
+            <label for="locationName">Location: </label>
+            <input type="text" id="locationName" th:field="*{locationName}" placeholder="Location Name" /><br><br>
+            <input type="submit" value="Add Location"> 
+        </form>
+        <a href="/"><button>Locations</button></a>
+    </body>
+</html>

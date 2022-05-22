@@ -1,0 +1,147 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:600,700';
+
+* {font-family: 'Open Sans', sans-serif;}
+
+.table-ref {
+  margin: auto;
+  min-width: 300px;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+.table-ref tr:first-child {
+  border-top: none;
+  background: #428bca;
+  color: #fff;
+}
+
+.table-ref tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #f5f9fc;
+}
+
+.table-ref tr:nth-child(odd):not(:first-child) {
+  background-color: #ebf3f9;
+}
+
+.table-ref th {
+  display: none;
+}
+
+.table-ref td {
+  display: block;
+}
+
+.table-ref td:first-child {
+  margin-top: .5em;
+}
+
+.table-ref td:last-child {
+  margin-bottom: .5em;
+}
+
+.table-ref td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  width: 120px;
+  display: inline-block;
+  color: #000;
+}
+
+.table-ref th,
+.table-ref td {
+  text-align: left;
+}
+
+.table-ref {
+  color: #333;
+  border-radius: .4em;
+  overflow: hidden;
+}
+
+.table-ref tr {
+  border-color: #bfbfbf;
+}
+
+.table-ref th,
+.table-ref td {
+  padding: .5em 1em;
+}
+@media screen and (max-width: 601px) {
+  .table-ref tr:nth-child(2) {
+    border-top: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  .table-ref tr:hover:not(:first-child) {
+    background-color: #d8e7f3;
+  }
+  .table-ref td:before {
+    display: none;
+  }
+  .table-ref th,
+  .table-ref td {
+    display: table-cell;
+    padding: .25em .5em;
+  }
+  .table-ref th:first-child,
+  .table-ref td:first-child {
+    padding-left: 0;
+  }
+  .table-ref th:last-child,
+  .table-ref td:last-child {
+    padding-right: 0;
+  }
+  .table-ref th,
+  .table-ref td {
+    padding: 1em !important;
+  }
+}
+
+button {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.4em;
+  color: #f2f2f2;
+}
+.container {
+  display: block;
+  text-align: center;
+}
+h3 {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 1.5em;
+  color: #cecece;
+}
+h3:before {
+  content: "\25C0";
+  position: absolute;
+  left: -50px;
+  -webkit-animation: leftRight 2s linear infinite;
+  animation: leftRight 2s linear infinite;
+}
+h3:after {
+  content: "\25b6";
+  position: absolute;
+  right: -50px;
+  -webkit-animation: leftRight 2s linear infinite reverse;
+  animation: leftRight 2s linear infinite reverse;
+}
+@-webkit-keyframes leftRight {
+  0%    { -webkit-transform: translateX(0)}
+  25%   { -webkit-transform: translateX(-10px)}
+  75%   { -webkit-transform: translateX(10px)}
+  100%  { -webkit-transform: translateX(0)}
+}
+@keyframes leftRight {
+  0%    { transform: translateX(0)}
+  25%   { transform: translateX(-10px)}
+  75%   { transform: translateX(10px)}
+  100%  { transform: translateX(0)}
+}

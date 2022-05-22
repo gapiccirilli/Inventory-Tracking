@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inventory List</title>
+        <link rel="stylesheet" th:href="@{css/table.css}" />
+        
+        
+    </head>
+    <body>
+            <table class="table-ref">
+                <tr>
+                    <th>Location</th>
+                    <th>Add to Inventory</th>
+                    <th>View Inventory</th>
+                    <!-- <th></th>
+                    <th></th> -->
+                </tr>
+                <tr th:each="location : ${locations}">
+                    <td th:text="${location.locationName}"></td>
+                    <td><form th:action="@{/inventory}" method="post">
+                        <input type="hidden" name="id" th:value="${location.id}" />
+                        <button type="submit">Add Items</button>
+                        </form>
+                    </td>
+                    <td><form th:action="@{/inventory/view}" method="post">
+                        <input type="hidden" name="id" th:value="${location.id}" />
+                        <button type="submit">View Inventory</button>
+                        </form>
+                    </td>
+                    <!-- <td><form th:action="@{/location/location-idu}" method="post">
+                        <input type="hidden" name="id" th:value="${location.id}" />
+                        <button type="submit">Update</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form th:action="@{/location/location-idd}" method="post">
+                        <input type="hidden" name="id" th:value="${location.id}" />
+                        <button type="submit">Delete</button>
+                        </form> -->
+                    </td>
+                </tr>
+            </table>
+        <a href="/inventory"><button>Add Location</button></a>
+        <!-- Add edit button and delete button to inventory list -->
+    </body>
+</html>
